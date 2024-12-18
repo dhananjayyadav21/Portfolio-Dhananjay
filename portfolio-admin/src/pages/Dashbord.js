@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Dashboard = () => (
   <div className="d-flex">
     <Sidebar />
-    <div className="container-fluid" style={{ marginLeft: '250px' }}>
+    <div className="container-fluid">
       <h2 className="mt-4">Dashboard</h2>
       <hr />
       <div className="row mt-4">
@@ -15,7 +15,7 @@ const Dashboard = () => (
               <div className="card-body">
                 <h5 className="card-title">{section}</h5>
                 <p className="card-text">Manage the {section} section of your portfolio.</p>
-                <Link to={`/${section.toLowerCase()}`} className="btn btn-primary">Go to {section}</Link>
+                <Link to={`/${section.toLowerCase()}`} className="btn btn-dark">Go to {section}</Link>
               </div>
             </div>
           </div>

@@ -1,33 +1,60 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {
+  CDBSidebar,
+  CDBSidebarContent,
+  CDBSidebarFooter,
+  CDBSidebarHeader,
+  CDBSidebarMenu,
+  CDBSidebarMenuItem,
+} from 'cdbreact';
+import { NavLink } from 'react-router-dom';
 
-const Sidebar = () => (
-  <div className="d-flex">
-    {/* Sidebar */}
-    <div className="bg-dark text-white vh-100 position-fixed" style={{ width: '250px' }}>
-      <h4 className="text-center py-4">Admin Panel</h4>
-      <ul className="nav flex-column">
-        <li className="nav-item mb-2">
-          <Link to="/" className="nav-link text-white">Dashboard</Link>
-        </li>
-        <li className="nav-item mb-2">
-          <Link to="/about" className="nav-link text-white">About</Link>
-        </li>
-        <li className="nav-item mb-2">
-          <Link to="/projects" className="nav-link text-white">Projects</Link>
-        </li>
-        <li className="nav-item mb-2">
-          <Link to="/skills" className="nav-link text-white">Skills</Link>
-        </li>
-        <li className="nav-item mb-2">
-          <Link to="/contact" className="nav-link text-white">Contact</Link>
-        </li>
-        <li className="nav-item mb-2">
-          <Link to="/Certificate" className="nav-link text-white">Certificate</Link>
-        </li>
-      </ul>
+const Sidebar = () => {
+  return (
+    <div style={{ display: 'flex', minHeight: '100vh', overflow: 'scroll initial' }}>
+      <CDBSidebar textColor="#fff" backgroundColor="#333">
+        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
+          <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
+          Dashboard
+          </a>
+        </CDBSidebarHeader>
+        <CDBSidebarContent className="sidebar-content">
+          <CDBSidebarMenu>
+
+            <NavLink exact to="/" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/about" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">About Section</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/projects" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Project Section page</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/skills" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="chart-line">Skills Section</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/Certificate" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="exclamation-circle">Certificate Section</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/contact" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="columns">Contact Section</CDBSidebarMenuItem>
+            </NavLink>
+
+          </CDBSidebarMenu>
+        </CDBSidebarContent>
+
+        <CDBSidebarFooter style={{ textAlign: 'center' }}>
+          <div
+            style={{
+              padding: '20px 5px',
+            }}
+          >
+            @2024 Dhananjay.
+          </div>
+        </CDBSidebarFooter>
+      </CDBSidebar>
     </div>
-  </div>
-);
+  );
+};
 
 export default Sidebar;

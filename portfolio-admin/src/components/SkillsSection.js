@@ -30,13 +30,13 @@ const SkillsSection = () => {
     <>
        <div className="d-flex">
        <Sidebar/>
-      <div className="container mt-4 jutify-content-center" style={{margin:"250px"}}>
+      <div className="container my-4 jutify-content-center">
         <h2 className="mb-4">Skills Section</h2>
         <hr />
        
         {/* Add Skill Form */}
         <form className="card shadow-lg border-0 p-4 mb-5 mt-4">
-          <h4 className="mb-4 text-primary">Add New Skill</h4>
+          <h4 className="mb-4 text-dark">Add New Skill</h4>
           <div className="mb-3">
             <label htmlFor="skillName" className="form-label fw-bold">Skill Name</label>
             <input
@@ -59,7 +59,7 @@ const SkillsSection = () => {
               onChange={(e) => setSkillImage(e.target.value)}
             />
           </div>
-          <button type="submit" className="btn btn-primary btn-lg" onClick={handleAddSkill}>
+          <button type="submit" className="btn btn-dark btn-lg" onClick={handleAddSkill}>
             Add Skill
           </button>
         </form>

@@ -24,8 +24,8 @@ const AboutSection = () => {
     <div className="d-flex">
       
       <Sidebar/>
-      <div className="container-fluid justify-content-center" style={{marginLeft:"250px"}}>
-        <h2 className="mt-4 container">About Section</h2>
+      <div className="container-fluid justify-content-center my-4">
+        <h2 className=" container">About Section</h2>
         <hr className='container' />
 
           <div className="container mt-2">
@@ -91,7 +91,7 @@ const AboutSection = () => {
               </div>
 
               <div className="d-flex justify-content-between">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-dark">
                   {buttonOne || 'Submit'}
                 </button>
                 <button type="button" className="btn btn-secondary" onClick={() => alert('Cancel action')}>

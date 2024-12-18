@@ -37,12 +37,12 @@ const ProjectsSection = () => {
       <div className='d-flex'>
 
         <Sidebar/>
-        <div className="container mt-4" style={{marginLeft:"250px"}}>
-          <h2 className="text-center mb-4">Projects Section</h2>
+        <div className="container my-4">
+          <h2 className="mb-1">Projects Section</h2>
           <hr />
 
           {/* Add Project Form */}
-          <form className="card shadow p-4 mb-4 mt-5" onSubmit={handleAddProject}>
+          <form className="card shadow p-4 mb-4 mt-3" onSubmit={handleAddProject}>
             <h4 className="mb-3">Add New Project</h4>
             <div className="mb-3">
               <label htmlFor="projectName" className="form-label">Project Name</label>
@@ -88,7 +88,7 @@ const ProjectsSection = () => {
                 onChange={(e) => setProjectUrl(e.target.value)}
               />
             </div>
-            <button type="submit" className="btn btn-primary">Add Project</button>
+            <button type="submit" className="btn btn-dark">Add Project</button>
           </form>
 
           {/* Project Cards */}
@@ -100,7 +100,7 @@ const ProjectsSection = () => {
                   <div className="card-body">
                     <h5 className="card-title">{project.name}</h5>
                     <p className="card-text">{project.description}</p>
-                    <a href={project.url} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <a href={project.url} className="btn btn-dark" target="_blank" rel="noopener noreferrer">
                       Visit Project
                     </a>
                   </div>

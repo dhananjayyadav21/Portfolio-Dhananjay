@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "cdbreact": "^1.5.19",
     "cra-template": "1.2.0",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.7",

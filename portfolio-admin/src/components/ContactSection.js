@@ -26,7 +26,7 @@ const Contact = () => {
     <div className='d-flex'>
 
       <Sidebar/> 
-      <div className="container mt-5" style={{marginLeft:"250px"}}>
+      <div className="container my-4">
         <div className="card shadow-lg p-4">
           <h2 className="text-center mb-4">Contact Us</h2>
           <hr />
@@ -88,7 +88,7 @@ const Contact = () => {
                 onChange={handleChange}
               />
             </div>
-            <button type="submit" className="btn btn-primary w-100">Submit</button>
+            <button type="submit" className="btn btn-dark w-100">Submit</button>
           </form>
         </div>
       </div>
