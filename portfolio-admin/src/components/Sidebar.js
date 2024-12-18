@@ -21,22 +21,22 @@ const Sidebar = () => {
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
 
-            <NavLink exact to="/" activeClassName="activeClicked">
+            <NavLink  to="/" >
               <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/about" activeClassName="activeClicked">
+            <NavLink  to="/about" >
               <CDBSidebarMenuItem icon="table">About Section</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/projects" activeClassName="activeClicked">
+            <NavLink  to="/projects" >
               <CDBSidebarMenuItem icon="table">Project Section page</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/skills" activeClassName="activeClicked">
+            <NavLink  to="/skills" >
               <CDBSidebarMenuItem icon="chart-line">Skills Section</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/Certificate" activeClassName="activeClicked">
+            <NavLink  to="/Certificate" >
               <CDBSidebarMenuItem icon="exclamation-circle">Certificate Section</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/contact" activeClassName="activeClicked">
+            <NavLink  to="/contact" >
               <CDBSidebarMenuItem icon="columns">Contact Section</CDBSidebarMenuItem>
             </NavLink>
 

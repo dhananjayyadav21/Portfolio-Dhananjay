@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Sidebar from '../pages/Sidebar';
+import Sidebar from './Sidebar';
 
 const SkillsSection = () => {
   const [skills, setSkills] = useState([]);
