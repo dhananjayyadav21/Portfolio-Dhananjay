@@ -4,12 +4,14 @@ import ApiContext from '../context/ApiContext'
 const Home = () => {
 
     const context = useContext(ApiContext);
-    const {allProject,  getProject,  
+    const {allAbout, getAbout,
+           allProject,  getProject,  
            allSkills, getSkills,
            allCertificate, getCertificate, 
            allContact,  getContact} = context;
 
     useEffect(()=>{
+        getAbout();
         getProject();
         getSkills();
         getCertificate();
@@ -42,13 +44,15 @@ const Home = () => {
         {/* <!-- Hero Section --> */}
         <section class="hero d-flex flex-column justify-content-center flex-md-row py-5 py-md-0">
             <div class="container text-center">
-                <p class="mb-0 text-secondary">Hello, I`m</p>
-                <h1 class="mb-4 text-white" data-aos="fade-up">Dhananjay Yadav</h1>
-                <h2 data-aos="fade-up" data-aos-delay="200"> <span class="text-purple"><i>Web Developer </i></span>| MERN</h2>
-                <div class="mt-3">
-                    <button class="btn btn-dark rounded-4"><a class="nav-link" href="https://drive.google.com/file/d/1WJfvGCj0LWNnYgiiReCsDPTHFUwaL64N/view" download="">Download CV</a></button>
-                    <button class="btn btn-dark rounded-4"><a class="nav-link" href="https://www.linkedin.com/in/dhananjayyadav18/">linkedin <i class="fa-brands fa-linkedin mx-1"></i></a></button>
-                </div>
+                {allAbout.map((About)=><>
+                    <p class="mb-0 text-secondary">{About.title}</p>
+                    <h1 class="mb-4 text-white" data-aos="fade-up">{About.heading}</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="200"> <span class="text-purple"><i>Web Developer </i></span>| MERN</h2>
+                    <div class="mt-3">
+                        <button class="btn btn-dark rounded-4 mx-2"><a class="nav-link" href={`${About.btn1Url}`} download="">Download CV</a></button>
+                        <button class="btn btn-dark rounded-4"><a class="nav-link" href={`${About.btn2Url}`}>linkedin <i class="fa-brands fa-linkedin mx-1"></i></a></button>
+                    </div>
+                </>)}
             </div>
 
             <div class="container mt-5 mt-md-0">
@@ -109,7 +113,7 @@ const Home = () => {
                     {allSkills.map((skills)=><>
                         <div class="col-md-2 my-4" data-aos="fade-up" data-aos-delay="100">
                             <div class={`icon-box icon-${skills.name}`}>
-                             <i class={`fa-brands fa-${skills.imgUrl}`}></i>
+                             <i class={`${skills.imgUrl}`}></i>
                                 <h5>{skills.name}</h5>
                             </div>
                         </div>
