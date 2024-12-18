@@ -38,7 +38,8 @@
         <div class="container text-center">
             <p class="mb-0 text-secondary">Hello, I`m</p>
             <h1 class="mb-4 text-white" data-aos="fade-up">Dhananjay Yadav</h1>
-            <h2 data-aos="fade-up" data-aos-delay="200"> <span class="text-purple"><i>Web Developer </i></span>| MERN</h2>
+            <!-- Element to contain animated typing -->
+            <h2 data-aos="fade-up" data-aos-delay="200"><span class="text-Yellow" id="element"></span>| MERN</h2>
             <div class="mt-3">
                 <button class="btn btn-dark rounded-4"><a class="nav-link" href="https://drive.google.com/file/d/1WJfvGCj0LWNnYgiiReCsDPTHFUwaL64N/view" download="">Download CV</a></button>
                 <button class="btn btn-dark rounded-4"><a class="nav-link" href="https://www.linkedin.com/in/dhananjayyadav18/">linkedin <i class="fa-brands fa-linkedin mx-1"></i></i></a></button>
@@ -81,9 +82,9 @@
                     <div class="card project-card shadow mt-4">
                         <img src="assets/Project/Taskmanger.png" class="card-img-top" alt="Project 1">
                         <div class="card-body">
-                            <h5 class="card-title project-card-heading">Taskmanager</h5>
+                            <h5 class="card-title project-card-heading">Task Manager</h5>
                             <p class="card-text">A feature-rich task management application built using MERN stack, allowing users to create, update, and track tasks efficiently. Includes user authentication, priority settings, and a clean, responsive interface.</p>
-                            <button class="btn btn-dark rounded-3"><a href="https://taskmanagersd.netlify.app/">view project <i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>   
+                            <button class="btn btn-dark rounded-3"><a href="https://taskmanagersd.netlify.app/">View Project <i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>   
                         </div>
                     </div>
                 </div>
@@ -93,7 +94,7 @@
                         <div class="card-body">
                             <h5 class="card-title project-card-heading">Examee Learning App</h5>
                             <p class="card-text">An exam preparation platform designed to help students practice and evaluate their knowledge through pyq, notes, video lectures and analytics. Built with a focus on user experience and interactive design.</p>
-                            <button class="btn btn-dark rounded-3"><a href="https://examee.netlify.app/">view project <i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>   
+                            <button class="btn btn-dark rounded-3"><a href="https://examee.netlify.app/">View Project<i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>   
                         </div>
                     </div>
                 </div>
@@ -101,9 +102,9 @@
                     <div class="card project-card shadow mt-4">
                         <img src="assets/Project/Ebjar.png" class="card-img-top" alt="Project 3">
                         <div class="card-body">
-                            <h5 class="card-title project-card-heading">EBjar</h5>
+                            <h5 class="card-title project-card-heading">E-Bjar</h5>
                             <p class="card-text">A modern React.js Api-based web application designed to streamline learning for developers. Features include dynamic components, state management, and modular structure for hands-on React practice.</p>
-                            <button class="btn btn-dark rounded-3"><a href="https://ebjar.netlify.app/">view project <i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>   
+                            <button class="btn btn-dark rounded-3"><a href="https://ebjar.netlify.app/">View Project<i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>   
                         </div>
                     </div>
                 </div>
@@ -113,7 +114,7 @@
                         <div class="card-body">
                             <h5 class="card-title project-card-heading">Foodi</h5>
                             <p class="card-text">A visually appealing Bootstrap-based website for showcasing food services and menu items. Built with responsive design principles, it ensures seamless viewing on all devices.</p>
-                            <button class="btn btn-dark rounded-3"><a href="https://dhananjayfoodi.netlify.app/">view project <i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>  
+                            <button class="btn btn-dark rounded-3"><a href="https://dhananjayfoodi.netlify.app/">View Project<i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>  
                         </div>
                     </div>
                 </div>
@@ -123,7 +124,7 @@
                         <div class="card-body">
                             <h5 class="card-title project-card-heading">Spotify Music</h5>
                             <p class="card-text">A replica of the Spotify web app, featuring a dynamic playlist, music player, and play pause. Built with js and integrates songs folder for a realistic music experience.</p>
-                            <button class="btn btn-dark rounded-3"><a href="https://spotifyymusic.freewebhostmost.com/">view project <i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>  
+                            <button class="btn btn-dark rounded-3"><a href="https://spotifyymusic.freewebhostmost.com/">View Project  <i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>  
                         </div>
                     </div>
                 </div>
@@ -253,6 +254,18 @@
     <footer>
         <h6 class="mb-0">2024 Dhananjay Yadav | All Rights Reserved.</h6>
     </footer>
+
+
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+        strings: [ "Frontend Developer", "MERN Stack ", "Web Designer","Web Developer"],
+        typeSpeed: 50,
+        });
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
