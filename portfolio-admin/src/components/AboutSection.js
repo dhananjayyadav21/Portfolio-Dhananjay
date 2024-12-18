@@ -16,24 +16,24 @@ const AboutSection = () => {
     e.preventDefault();
     addAbout({title:formAbout.title,
       heading:formAbout.heading,
-      paragraph:formAbout.paragraph,
-      buttonOne:formAbout.buttonOne,
-      buttonTwo:formAbout.buttonTwo})
+      description:formAbout.description,
+      btn1Url:formAbout.btn1Url,
+      btn2Url:formAbout.btn2Url})
 
-    setFormAbout({title:"",heading:"",paragraph:"",buttonOne:"",buttonTwo:""});  
+    setFormAbout({title:"",heading:"",description:"",btn1Url:"",btn2Url:""});  
     alert('Form Submitted Successfully!');
   };
 
   const handleDeleteAbout = async (abouts)=>{
       deleteAbout(abouts._id);
-      alert("About Deleted Successfuly", "success");
+      alert("About Deleted Successfuly");
    }
 
   const handleOnChange = (e)=>{
     setFormAbout({...formAbout, [e.target.name]:e.target.value})
   }
 
-  const [ formAbout, setFormAbout] = useState({title:"",heading:"",paragraph:"",buttonOne:"",buttonTwo:"",});
+  const [ formAbout, setFormAbout] = useState({title:"",heading:"",description:"",btn1Url:"",btn2Url:"",});
 
   return (
     <div className="d-flex">
@@ -72,40 +72,40 @@ const AboutSection = () => {
               </div>
 
               <div className="mb-3">
-                <label htmlFor="paragraph" className="form-label">Paragraph</label>
+                <label htmlFor="description" className="form-label">description</label>
                 <textarea
                   className="form-control"
-                  id="paragraph"
-                   name="paragraph"
+                  id="description"
+                   name="description"
                   rows="4"
-                  placeholder="Enter paragraph"
-                  value={formAbout.paragraph}
+                  placeholder="Enter description"
+                  value={formAbout.description}
                   onChange={handleOnChange}
                 ></textarea>
               </div>
 
               <div className="mb-3">
-                <label htmlFor="buttonOne" className="form-label">Button 1 Label</label>
+                <label htmlFor="btn1Url" className="form-label">Button 1 Label</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="buttonOne"
-                   name="buttonOne"
+                  id="btn1Url"
+                   name="btn1Url"
                   placeholder="Enter button 1 label"
-                  value={formAbout.buttonOne}
+                  value={formAbout.btn1Url}
                   onChange={handleOnChange}
                 />
               </div>
 
               <div className="mb-3">
-                <label htmlFor="buttonTwo" className="form-label">Button 2 Label</label>
+                <label htmlFor="btn2Url" className="form-label">Button 2 Label</label>
                 <input
                   type="text"
                   className="form-control"
-                  id="buttonTwo"
-                   name="buttonTwo"
+                  id="btn2Url"
+                   name="btn2Url"
                   placeholder="Enter button 2 label"
-                  value={formAbout.buttonTwo}
+                  value={formAbout.btn2Url}
                   onChange={handleOnChange}
                 />
               </div>
@@ -122,10 +122,10 @@ const AboutSection = () => {
           </div>
 
           <div className="container my-5">
-              <div className="container row gap-1">
+              <div className="row">
                 {allAbout.map((abouts)=> <>
-                  <div className="container col-md-3 card p-3">
-                    <div>
+                  <div className="col-md-6 col-lg-4 mb-4" key={abouts}>
+                    <div className='card p-4 shadow-sm'>
                       <p>{abouts._id}</p>
                       <h5>{abouts.title}</h5>
                       <i className="fa-solid fa-delete-left cursor-pointer" onClick={()=> handleDeleteAbout(abouts)}></i>

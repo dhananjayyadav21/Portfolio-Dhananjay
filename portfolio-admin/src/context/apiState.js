@@ -4,13 +4,12 @@ import HttpService from "../Services/HttpService";
 
 const ApiState = (props) => {
  
-  //=========== Get All about using api request ====================
+  //=========== Get All about using api request ====================================================================================
   const getAbout = async () => {
     try {
       const json = await HttpService.GET(
         "http://localhost:5000/api/about/get"
       );
-      console.log("-------********>",json);
       setAbout(json);
     } catch (error) {
       console.log("Some error for get about",error);
@@ -46,12 +45,56 @@ const ApiState = (props) => {
     }
   };
 
+  //=========== Get All Project using api request ====================================================================================
+  const getProject = async () => {
+    try {
+      const json = await HttpService.GET(
+        "http://localhost:5000/api/project/get"
+      );
+      setProject(json);
+    } catch (error) {
+      console.log("Some error for get Project",error);
+    }
+  };
+
+  //=========== Add Project() api call function ==================
+  const addProject = async (Project) => {
+    try {
+      const json = await HttpService.POST(
+        "http://localhost:5000/api/project/add",
+        Project
+      );
+      setProject(allProject.concat(json));
+    } catch (error) {
+      console.log("Do not add Project due to some error",error);
+    }
+  };
+
+   //============== Delete Project api call ======================
+   const deleteProject = async (id) => {
+    try {
+          // eslint-disable-next-line
+      const json = await HttpService.DELETE(
+        `http://localhost:5000/api/project/delete/${id}`
+      );
+      const newProject = allProject.filter((Project) => Project._id !== id);
+      setProject(newProject);
+      return true;
+    } catch (error) {
+      console.log("Does not delete Project due to some error",error);
+      return false; 
+    }
+  };
+
+  //define state  =====================================
+  const [allProject, setProject] = useState([]);
+
   //define state  =====================================
   const [allAbout, setAbout] = useState([]);
 
   return (
     <apiContext.Provider
-      value={{allAbout, setAbout, getAbout, addAbout, deleteAbout}}
+      value={{allAbout, setAbout, getAbout, addAbout, deleteAbout, allProject, setProject, getProject, addProject, deleteProject}}
     >
       {props.children}
     </apiContext.Provider>
