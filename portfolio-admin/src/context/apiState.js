@@ -128,7 +128,52 @@ const ApiState = (props) => {
     }
   };
 
- 
+
+
+  //=========== Get All Certificate using api request ============================================================================
+  const getCertificate = async () => {
+    try {
+      const json = await HttpService.GET(
+        "http://localhost:5000/api/certificate/get"
+      );
+      setCertificate(json);
+    } catch (error) {
+      console.log("Some error for get Certificate",error);
+    }
+  };
+
+  //=========== Add Certificate() api call function ==================
+  const addCertificate = async (Certificate) => {
+    try {
+      const json = await HttpService.POST(
+        "http://localhost:5000/api/certificate/add",
+        Certificate
+      );
+      setCertificate(allCertificate.concat(json));
+    } catch (error) {
+      console.log("Do not add Certificate due to some error",error);
+    }
+  };
+
+   //============== Delete Certificate api call ======================
+   const deleteCertificate = async (id) => {
+    try {
+          // eslint-disable-next-line
+      const json = await HttpService.DELETE(
+        `http://localhost:5000/api/certificate/delete/${id}`
+      );
+      const newCertificate = allCertificate.filter((Certificate) => Certificate._id !== id);
+      setCertificate(newCertificate);
+      return true;
+    } catch (error) {
+      console.log("Does not delete Certificate due to some error",error);
+      return false; 
+    }
+  };
+
+
+  //define state  =====================================
+  const [allCertificate, setCertificate] = useState([]);
 
   //define state  =====================================
   const [allSkills, setSkills] = useState([]);
@@ -141,7 +186,7 @@ const ApiState = (props) => {
 
   return (
     <apiContext.Provider
-      value={{allAbout, setAbout, getAbout, addAbout, deleteAbout, allProject, setProject, getProject, addProject, deleteProject,  allSkills, setSkills, getSkills, addSkills, deleteSkills}}
+      value={{allAbout, setAbout, getAbout, addAbout, deleteAbout, allProject, setProject, getProject, addProject, deleteProject,  allSkills, setSkills, getSkills, addSkills, deleteSkills,allCertificate, setCertificate, getCertificate, addCertificate, deleteCertificate}}
     >
       {props.children}
     </apiContext.Provider>
