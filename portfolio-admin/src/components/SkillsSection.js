@@ -11,6 +11,8 @@ const SkillsSection = () => {
     getSkills();
   },[])
 
+
+  //---------------------------------------------------------------------
   const [FormSkills, setFormSkills] = useState({name:"",imgUrl:""});
 
   const handleAddSkill = (e) => {
@@ -23,12 +25,13 @@ const SkillsSection = () => {
     setFormSkills({...FormSkills, [e.target.name]:e.target.value});
   }
 
+  //------------------------------------------------------
   const handleDeleteAbout = async (skill)=>{
     deleteSkills(skill._id);
     alert("Skills Deleted Successfuly");
  }
  
-// ==========================================================================================================================
+// ================================================== [Render html] ==========================================================
   return (
     <>
        <div className="d-flex">
@@ -69,7 +72,7 @@ const SkillsSection = () => {
           </button>
         </form>
 
-        {/* Skills Cards */}
+        {/*===================================== [Skills Cards] ============================*/}
         <div className="row g-4">
           {allSkills.map((skill, index) => (
             <div className="col-md-6 col-lg-4" key={index}>

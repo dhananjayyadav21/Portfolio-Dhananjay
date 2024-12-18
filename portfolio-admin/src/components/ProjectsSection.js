@@ -12,8 +12,7 @@ const ProjectsSection = () => {
      // eslint-disable-next-line
   },[])
 
-  console.log(allProject);
-
+  //------------------------------------------------
   const [formProjects, setFormProjects] = useState({projectName:"", description:"", imgurl:"", projecturl:"",});
 
   const handleAddProject = (e) => {
@@ -32,11 +31,13 @@ const ProjectsSection = () => {
     setFormProjects({...formProjects, [e.target.name]:e.target.value});
   }
 
+  //-----------------------------------------------------
   const handleDeleteAbout = async (project)=>{
     deleteProject(project._id);
     alert("Project Deleted Successfuly");
  }
 
+ //=================================================== [Render Html] =======================================================
   return (
     <>
       <div className='d-flex'>
@@ -46,7 +47,7 @@ const ProjectsSection = () => {
           <h2 className="mb-1">Projects Section</h2>
           <hr />
 
-          {/* Add Project Form */}
+          {/*============================= Add Project Form ================================*/}
           <form className="card shadow p-4 mb-4 mt-3" onSubmit={handleAddProject}>
             <h4 className="mb-3">Add New Project</h4>
             <div className="mb-3">
@@ -100,7 +101,7 @@ const ProjectsSection = () => {
             <button type="submit" className="btn btn-dark">Add Project</button>
           </form>
 
-          {/* Project Cards */}
+          {/*============================= Project Cards ================================*/}
           <div className="row">
             {allProject.map((project, index) => (
               <div className="col-md-6 col-lg-4 mb-4" key={index}>

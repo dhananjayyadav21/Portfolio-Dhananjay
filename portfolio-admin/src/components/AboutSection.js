@@ -12,6 +12,7 @@ const AboutSection = () => {
     // eslint-disable-next-line
   }, []);
 
+  //---------------------------------------------------------
   const handleSubmit = (e) => {
     e.preventDefault();
     addAbout({title:formAbout.title,
@@ -24,6 +25,10 @@ const AboutSection = () => {
     alert('Form Submitted Successfully!');
   };
 
+  const [ formAbout, setFormAbout] = useState({title:"",heading:"",description:"",btn1Url:"",btn2Url:"",});
+
+
+  // ---------------------------------------------
   const handleDeleteAbout = async (abouts)=>{
       deleteAbout(abouts._id);
       alert("About Deleted Successfuly");
@@ -33,8 +38,7 @@ const AboutSection = () => {
     setFormAbout({...formAbout, [e.target.name]:e.target.value})
   }
 
-  const [ formAbout, setFormAbout] = useState({title:"",heading:"",description:"",btn1Url:"",btn2Url:"",});
-
+  //=============================================== [Render Html] ==================================================
   return (
     <div className="d-flex">
       
@@ -121,10 +125,11 @@ const AboutSection = () => {
             </form>
           </div>
 
+          {/*================================== About Card  ===========================*/}
           <div className="container my-5">
               <div className="row">
-                {allAbout.map((abouts)=> <>
-                  <div className="col-md-6 col-lg-4 mb-4" key={abouts}>
+                {allAbout.map((abouts,i)=> <>
+                  <div className="col-md-6 col-lg-4 mb-4" key={i}>
                     <div className='card p-4 shadow-sm'>
                       <p>{abouts._id}</p>
                       <h5>{abouts.title}</h5>

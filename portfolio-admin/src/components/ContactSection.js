@@ -1,7 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Sidebar from './Sidebar';
+import apiContext from '../context/apiContext';
 
 const Contact = () => {
+
+  const context = useContext(apiContext);
+  const {allContact, getContact, addContact, deleteContact} = context;
+
+  useEffect(()=>{
+    getContact();
+  },[]);
+
+  //-----------------------------------------
   const [form, setForm] = useState({
     mobile: '',
     email: '',
@@ -18,18 +28,30 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Submitted:', form);
-    // Here you can handle the form data (e.g., send it to a server or update state)
+
+    addContact({mobile:form.mobile, email:form.email, address:form.address , socialMedia:{facebook:form.facebook, twitter:form.twitter ,linkedin: form.linkedin}});
+
+    setForm({mobile: '',email: '', address: '',facebook: '', twitter: '',linkedin: ''});
+    alert("Contacts Add Successfuly");
   };
 
+  //------------------------------------------------------
+  const handleDeleteAbout = async (Contacts)=>{
+    deleteContact(Contacts._id);
+    alert("Contacts Deleted Successfuly");
+ }
+
+
+  // ============================================= Render Html ================================================================
   return (
     <div className='d-flex'>
 
       <Sidebar/> 
       <div className="container my-4">
-        <div className="card shadow-lg p-4">
-          <h2 className="text-center mb-4">Contact Us</h2>
-          <hr />
+        <h2 className="text-center mb-4">Contact Us</h2>
+        <hr />
+
+        <div className="card shadow p-4">
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label">📞 Mobile</label>
@@ -90,6 +112,22 @@ const Contact = () => {
             </div>
             <button type="submit" className="btn btn-dark w-100">Submit</button>
           </form>
+        </div>
+
+        {/*============================= Project Cards ================================*/}
+        <div className="row my-4">
+          {allContact.map((Contacts, index) => (
+            <div className="col-md-6 col-lg-4 mb-4" key={index}>
+              <div className="card shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title">{Contacts.mobile}</h5>
+                  <p className="card-text">{Contacts.email}</p>
+                  <p className="card-title">{Contacts.address}</p>
+                  <i className="fa-solid fa-delete-left cursor-pointer mx-4" onClick={()=> handleDeleteAbout(Contacts)}></i>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

@@ -4,7 +4,7 @@ import HttpService from "../Services/HttpService";
 
 const ApiState = (props) => {
  
-  //=========== Get All about using api request ====================================================================================
+  //================================================= [Get All about using api request] ===============================================
   const getAbout = async () => {
     try {
       const json = await HttpService.GET(
@@ -16,7 +16,7 @@ const ApiState = (props) => {
     }
   };
 
-  //=========== Add About() api call function ==================
+  //=========== {Add About() api call function} ==================
   const addAbout = async (newAbout) => {
     try {
       const json = await HttpService.POST(
@@ -29,7 +29,7 @@ const ApiState = (props) => {
     }
   };
 
-   //============== Delete About api call ======================
+   //============== {Delete About api call} ======================
    const deleteAbout = async (id) => {
     try {
           // eslint-disable-next-line
@@ -45,7 +45,7 @@ const ApiState = (props) => {
     }
   };
 
-  //=========== Get All Project using api request ====================================================================================
+  //================================================ [Get All Project using api request] ==============================================
   const getProject = async () => {
     try {
       const json = await HttpService.GET(
@@ -57,7 +57,7 @@ const ApiState = (props) => {
     }
   };
 
-  //=========== Add Project() api call function ==================
+  //=========== {Add Project() api call function} ==================
   const addProject = async (Project) => {
     try {
       const json = await HttpService.POST(
@@ -70,7 +70,7 @@ const ApiState = (props) => {
     }
   };
 
-   //============== Delete Project api call ======================
+   //============== {Delete Project api call} ======================
    const deleteProject = async (id) => {
     try {
           // eslint-disable-next-line
@@ -87,7 +87,7 @@ const ApiState = (props) => {
   };
 
 
-  //=========== Get All Skills using api request ====================================================================================
+  //================================================ [Get All Skills using api request] ==============================================
   const getSkills = async () => {
     try {
       const json = await HttpService.GET(
@@ -99,7 +99,7 @@ const ApiState = (props) => {
     }
   };
 
-  //=========== Add Skills() api call function ==================
+  //=========== {Add Skills() api call function} ==================
   const addSkills = async (Skills) => {
     try {
       const json = await HttpService.POST(
@@ -112,7 +112,7 @@ const ApiState = (props) => {
     }
   };
 
-   //============== Delete Skills api call ======================
+   //============== {Delete Skills api call} ======================
    const deleteSkills = async (id) => {
     try {
           // eslint-disable-next-line
@@ -130,7 +130,7 @@ const ApiState = (props) => {
 
 
 
-  //=========== Get All Certificate using api request ============================================================================
+  //============================================= [Get All Certificate using api request] ============================================
   const getCertificate = async () => {
     try {
       const json = await HttpService.GET(
@@ -142,7 +142,7 @@ const ApiState = (props) => {
     }
   };
 
-  //=========== Add Certificate() api call function ==================
+  //=========== {Add Certificate() api call function} ==================
   const addCertificate = async (Certificate) => {
     try {
       const json = await HttpService.POST(
@@ -155,7 +155,7 @@ const ApiState = (props) => {
     }
   };
 
-   //============== Delete Certificate api call ======================
+   //============== {Delete Certificate api call} ======================
    const deleteCertificate = async (id) => {
     try {
           // eslint-disable-next-line
@@ -172,21 +172,65 @@ const ApiState = (props) => {
   };
 
 
-  //define state  =====================================
+  //============================================= [Get All Contact using api request] ============================================
+  const getContact = async () => {
+    try {
+      const json = await HttpService.GET(
+        "http://localhost:5000/api/contact/get"
+      );
+      setContact(json);
+    } catch (error) {
+      console.log("Some error for get Contact",error);
+    }
+  };
+
+  //=========== {Add Contact() api call function} ==================
+  const addContact = async (Contact) => {
+    try {
+      const json = await HttpService.POST(
+        "http://localhost:5000/api/contact/add",
+        Contact
+      );
+      setContact(allContact.concat(json));
+    } catch (error) {
+      console.log("Do not add Contact due to some error",error);
+    }
+  };
+
+   //============== {Delete Contact api call} ======================
+   const deleteContact = async (id) => {
+    try {
+          // eslint-disable-next-line
+      const json = await HttpService.DELETE(
+        `http://localhost:5000/api/contact/delete/${id}`
+      );
+      const newContact = allContact.filter((Contact) => Contact._id !== id);
+      setContact(newContact);
+      return true;
+    } catch (error) {
+      console.log("Does not delete Contact due to some error",error);
+      return false; 
+    }
+  };
+
+  //[define state] =====================================
+  const [allContact, setContact] = useState([]);
+
+  //[define state] =====================================
   const [allCertificate, setCertificate] = useState([]);
 
-  //define state  =====================================
+  //[define state] =====================================
   const [allSkills, setSkills] = useState([]);
 
-  //define state  =====================================
+  //[define state] =====================================
   const [allProject, setProject] = useState([]);
 
-  //define state  =====================================
+  //[define state] =====================================
   const [allAbout, setAbout] = useState([]);
 
   return (
     <apiContext.Provider
-      value={{allAbout, setAbout, getAbout, addAbout, deleteAbout, allProject, setProject, getProject, addProject, deleteProject,  allSkills, setSkills, getSkills, addSkills, deleteSkills,allCertificate, setCertificate, getCertificate, addCertificate, deleteCertificate}}
+      value={{allAbout, setAbout, getAbout, addAbout, deleteAbout, allProject, setProject, getProject, addProject, deleteProject,  allSkills, setSkills, getSkills, addSkills, deleteSkills,allCertificate, setCertificate, getCertificate, addCertificate, deleteCertificate, allContact, setContact, getContact, addContact, deleteContact}}
     >
       {props.children}
     </apiContext.Provider>

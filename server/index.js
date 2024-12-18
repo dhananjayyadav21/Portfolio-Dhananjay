@@ -142,6 +142,12 @@ app.post('/api/contact/add', async (req, res) => {
   res.status(201).json(newContact);
 });
 
+app.get('/api/contact/get', async (req, res) => {
+  const contact = await Contact.find();
+  res.send(contact);
+});
+
+
 app.delete('/api/contact/delete/:id', async (req, res) => {
   const { id } = req.params;
   await Contact.findByIdAndDelete(id);

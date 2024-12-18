@@ -1,5 +1,6 @@
 class HttpService{
 
+   //=================================================== [Get Api Call Method] =================================================
     static GET = async (url) => {
         try {
           const responce = await fetch(url, {
@@ -17,6 +18,7 @@ class HttpService{
         }
       };
 
+    //=================================================== [Post Api Call Method] =================================================  
      static POST = async (url,data) => {
         try {
           const responce = await fetch(url, {
@@ -36,6 +38,7 @@ class HttpService{
       };
 
       
+    //=================================================== [Delete Api Call Method] =================================================
       static DELETE = async (url) => {
         try {
           const responce = await fetch(url, {

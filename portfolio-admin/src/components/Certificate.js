@@ -12,6 +12,7 @@ const Certificate = () => {
     // eslint-disable-next-line
   }, []);
 
+  //---------------------------------------------
   const [formCertificate, setFormCertificate] = useState({
     title: "",
     description: "",
@@ -30,6 +31,8 @@ const Certificate = () => {
     setFormCertificate({ title: "", description: "", image: "" });
   };
 
+
+  //---------------------------------------------
   const handleOnChange = (e) => {
     setFormCertificate({ ...formCertificate, [e.target.name]: e.target.value });
   };
@@ -39,6 +42,7 @@ const Certificate = () => {
     alert("Project Certificate Successfuly");
   };
 
+  //=============================================== [Render Html] =============================================================
   return (
     <div className="d-flex">
       <Sidebar />
@@ -96,7 +100,7 @@ const Certificate = () => {
           </div>
         </div>
 
-        {/* Certificate Cards */}
+        {/*============================= Certificate Cards =============================*/}
         <div className="row g-4 my-5">
           {allCertificate.map((Certificate, index) => (
             <div className="col-md-6 col-lg-4" key={index}>
