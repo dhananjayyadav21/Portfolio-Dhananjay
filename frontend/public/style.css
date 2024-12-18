@@ -1,0 +1,138 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+.text-purple{
+    color: rgb(202, 13, 236);
+}
+
+/* ======================================================================================================================== */
+a {
+    text-decoration: none;
+    color: #ffc107;
+}
+a:hover {
+    text-decoration: underline;
+}
+.btn-custom {
+    background: #ffc107;
+    color: #121212;
+    border: none;
+}
+.btn-custom:hover {
+    background: #ffdd57;
+}
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.divider {
+    width: 80px;
+    height: 4px;
+    background: #ffc107;
+    margin: 0 auto 1.5rem;
+}
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #1f1f1f, #282828);
+}
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+.hero img {
+    width: 300px;
+}
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+footer {
+    background: #1f1f1f;
+    padding: 1.5rem 0;
+    text-align: center;
+    color: #aaaaaa;
+}
+footer a {
+    color: #ffc107;
+}
+.icon-box {
+    text-align: center;
+    margin-top: 20px;
+}
+.icon-box i {
+    font-size: 3rem;
+    color: #ffc107;
+}
+.icon-box h5 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* ======================= project section================================= */
+.project-card{
+    background: #0000005e;
+}
+
+.project-card p{
+   color: rgb(183, 181, 181);
+}
+
+.project-card-heading{
+   color: #d889f4;
+   font-weight: bolder;
+}
+
+/* ========================= skills section =============================== */
+.icon-HTML i {
+    color: #ff5507;
+}
+
+.icon-CSS i {
+    color: #0e4bf4;
+}
+
+.icon-JavaScript i {
+    color: #ffc107;
+}
+
+.icon-Bootstrap i {
+    color: #a407ff;
+}
+
+.icon-React.js i {
+    color: #07c1ff;
+}
+
+.icon-Node.js i {
+    color: #05a425;
+}
+
+.icon-express.js i {
+    color: #a7a7a7;
+}
+
+.icon-Mongodb i {
+    color: #06b70c;
+}
+
+.icon-Github i {
+    color: #787878;
+}
+
+.icon-Git i {
+    color: #ff3907;
+}
