@@ -86,6 +86,53 @@ const ApiState = (props) => {
     }
   };
 
+
+  //=========== Get All Skills using api request ====================================================================================
+  const getSkills = async () => {
+    try {
+      const json = await HttpService.GET(
+        "http://localhost:5000/api/skill/get"
+      );
+      setSkills(json);
+    } catch (error) {
+      console.log("Some error for get Skills",error);
+    }
+  };
+
+  //=========== Add Skills() api call function ==================
+  const addSkills = async (Skills) => {
+    try {
+      const json = await HttpService.POST(
+        "http://localhost:5000/api/skill/add",
+        Skills
+      );
+      setSkills(allSkills.concat(json));
+    } catch (error) {
+      console.log("Do not add Skills due to some error",error);
+    }
+  };
+
+   //============== Delete Skills api call ======================
+   const deleteSkills = async (id) => {
+    try {
+          // eslint-disable-next-line
+      const json = await HttpService.DELETE(
+        `http://localhost:5000/api/skill/delete/${id}`
+      );
+      const newSkills = allSkills.filter((Skills) => Skills._id !== id);
+      setSkills(newSkills);
+      return true;
+    } catch (error) {
+      console.log("Does not delete Skills due to some error",error);
+      return false; 
+    }
+  };
+
+ 
+
+  //define state  =====================================
+  const [allSkills, setSkills] = useState([]);
+
   //define state  =====================================
   const [allProject, setProject] = useState([]);
 
@@ -94,7 +141,7 @@ const ApiState = (props) => {
 
   return (
     <apiContext.Provider
-      value={{allAbout, setAbout, getAbout, addAbout, deleteAbout, allProject, setProject, getProject, addProject, deleteProject}}
+      value={{allAbout, setAbout, getAbout, addAbout, deleteAbout, allProject, setProject, getProject, addProject, deleteProject,  allSkills, setSkills, getSkills, addSkills, deleteSkills}}
     >
       {props.children}
     </apiContext.Provider>
