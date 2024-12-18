@@ -24,22 +24,22 @@ const Sidebar = () => {
           <CDBSidebarContent className="sidebar-content">
             <CDBSidebarMenu>
               <NavLink  to="/" >
-                <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
+                <CDBSidebarMenuItem ><i className="fa-solid fa-table-columns mx-2"></i>Dashboard</CDBSidebarMenuItem>
               </NavLink>
               <NavLink  to="/about" >
-                <CDBSidebarMenuItem icon="table">About Section</CDBSidebarMenuItem>
+                <CDBSidebarMenuItem><i className="fa-regular fa-address-card mx-2"></i>About Section</CDBSidebarMenuItem>
               </NavLink>
               <NavLink  to="/projects" >
-                <CDBSidebarMenuItem icon="table">Project Section page</CDBSidebarMenuItem>
+                <CDBSidebarMenuItem ><i className="fa-solid fa-computer mx-2"></i>Project Section</CDBSidebarMenuItem>
               </NavLink>
               <NavLink  to="/skills" >
-                <CDBSidebarMenuItem icon="chart-line">Skills Section</CDBSidebarMenuItem>
+                <CDBSidebarMenuItem><i className="fa-solid fa-chart-line mx-2"></i>Skills Section</CDBSidebarMenuItem>
               </NavLink>
               <NavLink  to="/Certificate" >
-                <CDBSidebarMenuItem icon="exclamation-circle">Certificate Section</CDBSidebarMenuItem>
+                <CDBSidebarMenuItem> <i className="fa-regular fa-note-sticky mx-2"></i>Certificate Section</CDBSidebarMenuItem>
               </NavLink>
               <NavLink  to="/contact" >
-                <CDBSidebarMenuItem icon="columns">Contact Section</CDBSidebarMenuItem>
+                <CDBSidebarMenuItem><i className="fa-solid fa-address-book mx-2"></i>Contact Section</CDBSidebarMenuItem>
               </NavLink>
             </CDBSidebarMenu>
           </CDBSidebarContent>
