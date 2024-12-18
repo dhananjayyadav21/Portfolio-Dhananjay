@@ -1,6 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 var cors = require('cors')
+require('dotenv').config();
+
+const mongoUri = process.env.DB_URI;
 
 const app = express();
 const PORT = 5000;
@@ -10,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB Connection
-mongoose.connect('mongodb+srv://dhananjay1807:Dhananjaybhai4atlas.mongodb@dhananjay.l9xwo.mongodb.net/?retryWrites=true&w=majority&appName=Dhananjay');
+mongoose.connect(mongoUri);
 
 // Models
 const About = mongoose.model('About', {

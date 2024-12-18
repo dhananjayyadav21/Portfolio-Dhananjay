@@ -10,7 +10,6 @@ class HttpService{
             },
           });
           const json = await responce.json();
-          console.log("------->",json);
           return json;
         } catch (error) {
           console.error(error)

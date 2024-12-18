@@ -1,6 +1,7 @@
 import { useState } from "react";
 import apiContext from "./apiContext";
 import HttpService from "../Services/HttpService";
+import * as GlobalUrls from "../GlobalUrl"
 
 const ApiState = (props) => {
  
@@ -8,7 +9,7 @@ const ApiState = (props) => {
   const getAbout = async () => {
     try {
       const json = await HttpService.GET(
-        "http://localhost:5000/api/about/get"
+        `${GlobalUrls.ABOUTGET}`
       );
       setAbout(json);
     } catch (error) {
@@ -20,7 +21,7 @@ const ApiState = (props) => {
   const addAbout = async (newAbout) => {
     try {
       const json = await HttpService.POST(
-        "http://localhost:5000/api/about/add",
+        `${GlobalUrls.ABOUTADD}`,
         newAbout
       );
       setAbout(allAbout.concat(json));
@@ -34,7 +35,7 @@ const ApiState = (props) => {
     try {
           // eslint-disable-next-line
       const json = await HttpService.DELETE(
-        `http://localhost:5000/api/about/delete/${id}`
+        `${GlobalUrls.ABOUTDELETE}/${id}`
       );
       const newAbout = allAbout.filter((about) => about._id !== id);
       setAbout(newAbout);
@@ -49,7 +50,7 @@ const ApiState = (props) => {
   const getProject = async () => {
     try {
       const json = await HttpService.GET(
-        "http://localhost:5000/api/project/get"
+        `${GlobalUrls.PROJECTGET}`
       );
       setProject(json);
     } catch (error) {
@@ -61,7 +62,7 @@ const ApiState = (props) => {
   const addProject = async (Project) => {
     try {
       const json = await HttpService.POST(
-        "http://localhost:5000/api/project/add",
+        `${GlobalUrls.PROJECTADD}`,
         Project
       );
       setProject(allProject.concat(json));
@@ -75,7 +76,7 @@ const ApiState = (props) => {
     try {
           // eslint-disable-next-line
       const json = await HttpService.DELETE(
-        `http://localhost:5000/api/project/delete/${id}`
+        `${GlobalUrls.PROJECTDELETE}/${id}`
       );
       const newProject = allProject.filter((Project) => Project._id !== id);
       setProject(newProject);
@@ -91,7 +92,7 @@ const ApiState = (props) => {
   const getSkills = async () => {
     try {
       const json = await HttpService.GET(
-        "http://localhost:5000/api/skill/get"
+        `${GlobalUrls.SKILLSGET}`
       );
       setSkills(json);
     } catch (error) {
@@ -103,7 +104,7 @@ const ApiState = (props) => {
   const addSkills = async (Skills) => {
     try {
       const json = await HttpService.POST(
-        "http://localhost:5000/api/skill/add",
+        `${GlobalUrls.SKILLSADD}`,
         Skills
       );
       setSkills(allSkills.concat(json));
@@ -117,7 +118,7 @@ const ApiState = (props) => {
     try {
           // eslint-disable-next-line
       const json = await HttpService.DELETE(
-        `http://localhost:5000/api/skill/delete/${id}`
+        `${GlobalUrls.SKILLSDELETE}/${id}`
       );
       const newSkills = allSkills.filter((Skills) => Skills._id !== id);
       setSkills(newSkills);
@@ -134,7 +135,7 @@ const ApiState = (props) => {
   const getCertificate = async () => {
     try {
       const json = await HttpService.GET(
-        "http://localhost:5000/api/certificate/get"
+        `${GlobalUrls.CERTIFICATGET}`
       );
       setCertificate(json);
     } catch (error) {
@@ -146,7 +147,7 @@ const ApiState = (props) => {
   const addCertificate = async (Certificate) => {
     try {
       const json = await HttpService.POST(
-        "http://localhost:5000/api/certificate/add",
+        `${GlobalUrls.CERTIFICATADD}`,
         Certificate
       );
       setCertificate(allCertificate.concat(json));
@@ -160,7 +161,7 @@ const ApiState = (props) => {
     try {
           // eslint-disable-next-line
       const json = await HttpService.DELETE(
-        `http://localhost:5000/api/certificate/delete/${id}`
+        `${GlobalUrls.CERTIFICATDELETE}/${id}`
       );
       const newCertificate = allCertificate.filter((Certificate) => Certificate._id !== id);
       setCertificate(newCertificate);
@@ -176,7 +177,7 @@ const ApiState = (props) => {
   const getContact = async () => {
     try {
       const json = await HttpService.GET(
-        "http://localhost:5000/api/contact/get"
+        `${GlobalUrls.CONTACTGET}`
       );
       setContact(json);
     } catch (error) {
@@ -188,7 +189,7 @@ const ApiState = (props) => {
   const addContact = async (Contact) => {
     try {
       const json = await HttpService.POST(
-        "http://localhost:5000/api/contact/add",
+        `${GlobalUrls.CONTACTADD}`,
         Contact
       );
       setContact(allContact.concat(json));
@@ -202,7 +203,7 @@ const ApiState = (props) => {
     try {
           // eslint-disable-next-line
       const json = await HttpService.DELETE(
-        `http://localhost:5000/api/contact/delete/${id}`
+        `${GlobalUrls.CONTACTDELETE}/${id}`
       );
       const newContact = allContact.filter((Contact) => Contact._id !== id);
       setContact(newContact);

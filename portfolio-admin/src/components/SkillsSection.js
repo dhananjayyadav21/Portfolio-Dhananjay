@@ -9,6 +9,7 @@ const SkillsSection = () => {
 
   useEffect(()=>{
     getSkills();
+     // eslint-disable-next-line
   },[])
 
 

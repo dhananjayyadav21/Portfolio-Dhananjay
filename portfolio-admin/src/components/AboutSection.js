@@ -128,8 +128,8 @@ const AboutSection = () => {
           {/*================================== About Card  ===========================*/}
           <div className="container my-5">
               <div className="row">
-                {allAbout.map((abouts,i)=> <>
-                  <div className="col-md-6 col-lg-4 mb-4" key={i}>
+                {allAbout.map((abouts)=> <>
+                  <div className="col-md-6 col-lg-4 mb-4" key={abouts._id}>
                     <div className='card p-4 shadow-sm'>
                       <p>{abouts._id}</p>
                       <h5>{abouts.title}</h5>
