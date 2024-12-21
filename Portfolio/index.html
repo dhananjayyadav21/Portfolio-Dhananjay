@@ -19,7 +19,7 @@
 <body>
     <!-- ================================================= Navbar ==================================================== -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
+        <div class="container p-md-2">
             <a class="navbar-brand fw-bold text-purple" href="#">Coding Hub</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -35,12 +35,14 @@
         </div>
     </nav>
 
-    <div id="stars"></div>
-    <div id="stars2"></div>
-    <div id="stars3"></div>
+    <div class="stars" id="stars"></div>
+    <div class="stars" id="stars2"></div>
+    <div class="stars" id="stars3"></div>
+
+
 
     <!-- ====================================================== Hero Section ================================================ -->
-    <section class="hero d-flex flex-column justify-content-center flex-md-row py-5 py-md-0">
+    <section class="hero d-flex flex-column justify-content-center flex-md-row px-4 py-5 py-md-0">
         <div class="container text-center"  id="title">
             <p class="mb-0 text-secondary">Hello, I`m</p>
             <h1 class="mb-4 text-white" data-aos="fade-up">Dhananjay Yadav</h1>
@@ -51,15 +53,21 @@
                 <button class="btn btn-dark rounded-4"><a class="nav-link" href="https://www.linkedin.com/in/dhananjayyadav18/">linkedin <i class="fa-brands fa-linkedin mx-1"></i></i></a></button>
             </div>
         </div>
-        
         <div class="container mt-5 mt-md-0">
             <img class="mx-auto" src="assets/Home.png" alt="Web Development Image" data-aos="fade-up" data-aos-delay="400">
         </div>
     </section>
 
+
+    <div class="about-container"> 
+        <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 120" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="#121212" offset="10%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,0L480,72L960,48L1440,108L1920,72L2400,72L2880,84L3360,108L3840,96L4320,108L4800,84L5280,72L5760,96L6240,72L6720,84L7200,72L7680,12L8160,48L8640,24L9120,48L9600,12L10080,0L10560,12L11040,24L11520,108L11520,120L11040,120L10560,120L10080,120L9600,120L9120,120L8640,120L8160,120L7680,120L7200,120L6720,120L6240,120L5760,120L5280,120L4800,120L4320,120L3840,120L3360,120L2880,120L2400,120L1920,120L1440,120L960,120L480,120L0,120Z"></path></svg>
+    </div>
+
+
+
     <!-- ================================================= About Me Section ============================================= -->
     <section id="about" class="py-5">
-        <div class="container">
+        <div class="container mb-5">
             <h2 class="section-title text-center" data-aos="fade-up">About Me</h2>
             <div class="divider" data-aos="fade-up"></div>
             <p data-aos="fade-up" data-aos-delay="200"> 
@@ -77,10 +85,12 @@
             </ul>
         </div>
     </section>
-    
+
+
+
     <!-- =================================================== Projects Section  ============================================-->
-    <section id="projects" class="py-5 bg-dark">
-        <div class="container">
+    <section id="projects" class="py-5 px-4">
+        <div class="container px-4">
             <h2 class="section-title text-white text-center" data-aos="fade-up">PROJECTS</h2>
             <div class="divider" data-aos="fade-up"></div>
             <p class="text-center">Explore a showcase of innovative and diverse projects highlighting problem-solving,<br>  creativity, and technical expertise.</p>
@@ -88,7 +98,17 @@
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card project-card shadow mt-4 p-3 rounded-4 ">
                         <img src="assets/Project/Taskmanger.png" class="card-img-top rounded-4" alt="Project 1">
-                        <div class="card-body">
+                        <div class="mt-3">
+                            <div class="my-3 g-2">
+                                <span class="badge badge-color">React.js</span>
+                                <span class="badge badge-color">JavaScript</span>
+                                <span class="badge badge-color">Node.js</span>
+                                <span class="badge badge-color">express</span>
+                                <span class="badge badge-color">JWT</span>
+                                <span class="badge badge-color">Websocket</span>
+                                <span class="badge badge-color">Mongodb</span>
+                                <span class="badge badge-color">Bootstrap</span>
+                            </div>
                             <h5 class="card-title project-card-heading">Task Manager</h5>
                             <p class="card-text">A feature-rich task management application built using MERN stack, allowing users to create, update, and track tasks efficiently. Includes user authentication, priority settings, and a clean, responsive interface.</p>
                             <button class="btn btn-dark rounded-3"><a href="https://taskmanagersd.netlify.app/">View Project <i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>   
@@ -98,7 +118,16 @@
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card project-card shadow mt-4 p-3 rounded-4 ">
                         <img src="assets/Project/exameee.png" class="card-img-top rounded-4" alt="Project 2">
-                        <div class="card-body">
+                        <div class="mt-3">
+                            <div class="my-3">
+                                <span class="badge badge-color">React.js</span>
+                                <span class="badge badge-color">JavaScript</span>
+                                <span class="badge badge-color">Node.js</span>
+                                <span class="badge badge-color">express</span>
+                                <span class="badge badge-color">Bootstrap</span>
+                                <span class="badge badge-color">JWT</span>
+                                <span class="badge badge-color">Mongodb</span>
+                            </div>
                             <h5 class="card-title project-card-heading">Examee Learning App</h5>
                             <p class="card-text">An exam preparation platform designed to help students practice and evaluate their knowledge through pyq, notes, video lectures and analytics. Built with a focus on user experience and interactive design.</p>
                             <button class="btn btn-dark rounded-3"><a href="https://examee.netlify.app/">View Project<i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>   
@@ -108,7 +137,15 @@
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card project-card shadow mt-4 p-3 rounded-4 ">
                         <img src="assets/Project/Ebjar.png" class="card-img-top rounded-4" alt="Project 3">
-                        <div class="card-body">
+                        <div class="mt-3">
+                            <div class="mb-3">
+                                <span class="badge badge-color">React.js</span>
+                                <span class="badge badge-color">JavaScript</span>
+                                <span class="badge badge-color">Api</span>
+                                <span class="badge badge-color">CSS</span>
+                                <span class="badge badge-color">Node.js</span>
+                                <span class="badge badge-color">Bootstrap</span>
+                            </div>
                             <h5 class="card-title project-card-heading">E-Bjar</h5>
                             <p class="card-text">A modern React.js Api-based web application designed to streamline learning for developers. Features include dynamic components, state management, and modular structure for hands-on React practice.</p>
                             <button class="btn btn-dark rounded-3"><a href="https://ebjar.netlify.app/">View Project<i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>   
@@ -118,7 +155,13 @@
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card project-card shadow mt-4 p-3 rounded-4 ">
                         <img src="assets/Project/foodi.png" class="card-img-top rounded-4" alt="Project 4">
-                        <div class="card-body">
+                        <div class="mt-3">
+                            <div class="my-3">
+                                <span class="badge badge-color">HTML</span>
+                                <span class="badge badge-color">Bootstrap</span>
+                                <span class="badge badge-color">Git</span>
+                                <span class="badge badge-color">Github</span>
+                            </div>
                             <h5 class="card-title project-card-heading">Foodi</h5>
                             <p class="card-text">A visually appealing Bootstrap-based website for showcasing food services and menu items. Built with responsive design principles, it ensures seamless viewing on all devices.</p>
                             <button class="btn btn-dark rounded-3"><a href="https://dhananjayfoodi.netlify.app/">View Project<i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>  
@@ -128,7 +171,14 @@
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card project-card shadow mt-4 p-3 rounded-4 ">
                         <img src="assets/Project/spotifyy.png" class="card-img-top rounded-4" alt="Project 5">
-                        <div class="card-body">
+                        <div class="mt-3">
+                            <div class="mb-3">
+                                <span class="badge badge-color">HTML</span>
+                                <span class="badge badge-color">JavaScript</span>
+                                <span class="badge badge-color">CSS</span>
+                                <span class="badge badge-color">Git</span>
+                                <span class="badge badge-color">Github</span>
+                            </div>
                             <h5 class="card-title project-card-heading">Spotify Music</h5>
                             <p class="card-text">A replica of the Spotify web app, featuring a dynamic playlist, music player, and play pause. Built with js and integrates songs folder for a realistic music experience.</p>
                             <button class="btn btn-dark rounded-3"><a href="https://spotifyymusic.freewebhostmost.com/">View Project  <i class="fa-solid fa-arrow-up-right-from-square mx-2"></i></a></button>  
@@ -140,8 +190,8 @@
     </section>
 
     <!-- ==================================================== Skills Section ============================================= -->
-    <section id="skills" class="py-5">
-        <div class="container text-center">
+    <section id="skills" class="py-5 px-4">
+        <div class="container text-center px-4">
             <h2 class="section-title" data-aos="fade-up">SKILLS</h2>
             <div class="divider" data-aos="fade-up"></div>
             <p>A collection of certificates in web development that highlights  my interest and experience in the field.</p>
@@ -210,15 +260,18 @@
         </div>
     </section>
 
+
+
+
      <!-- ================================================= Certificates Section ============================================== -->
-     <section id="certificates" class="py-5">
-        <div class="container text-center">
+     <section id="certificates" class="py-5 px-4">
+        <div class="container text-center px-4">
             <h2 class="section-title" data-aos="fade-up">CERTIFICATES</h2>
             <div class="divider" data-aos="fade-up"></div>
             <p>Some Skills in web development that highlights my interest  and experience in the field.</p>
             <div class="row mt-5">
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card bg-dark text-white mt-4 p-3 rounded-3">
+                    <div class="card bg-dark text-white mt-4 p-3 rounded-4">
                         <img src="assets/certificate/js.png" class="card-img-top rounded-3" alt="Certificate 1">
                         <div class="card-body">
                             <h5 class="card-title">JavaScript</h5>
@@ -227,7 +280,7 @@
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card  bg-dark text-white mt-4 p-3 rounded-3">
+                    <div class="card  bg-dark text-white mt-4 p-3 rounded-4">
                         <img src="assets/certificate/react.png" class="card-img-top rounded-3" alt="Certificate 2">
                         <div class="card-body">
                             <h5 class="card-title">React.js</h5>
@@ -236,7 +289,7 @@
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card  bg-dark text-white mt-4 p-3 rounded-3">
+                    <div class="card  bg-dark text-white mt-4 p-3 rounded-4">
                         <img src="assets/certificate/node.png" class="card-img-top rounded-3" alt="Certificate 3">
                         <div class="card-body">
                             <h5 class="card-title">Node.js</h5>
@@ -248,7 +301,8 @@
         </div>
     </section>
 
-    <!-- ======================================================= Contact Section ============================================= -->
+
+    <!-- =================================================================== Contact Section =========================================================== -->
     <section id="contact" class="py-5 bg-dark">
         <div class="container text-center text-white">
             <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
@@ -260,14 +314,15 @@
         </div>
     </section>
 
+
+
+    <!-- =================================================================== footer Section ============================================================ -->
     <footer>
         <h6 class="mb-0">2024 Dhananjay Yadav | All Rights Reserved.</h6>
     </footer>
 
-
     <!-- Load library from the CDN -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
     <!-- Setup and start animation! -->
     <script>
         var typed = new Typed('#element', {
@@ -286,8 +341,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <script> AOS.init();</script>
 </body>
 </html>

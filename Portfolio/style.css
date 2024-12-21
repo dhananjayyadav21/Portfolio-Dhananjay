@@ -6,12 +6,24 @@ body {
   scroll-behavior: smooth;
 }
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================================================================== common css ======================================================== */
+
 .text-purple {
   color: rgb(202, 13, 236);
 }
 
 .text-Yellow {
   color: #ffc107;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
 
 .animated-text {
@@ -21,6 +33,20 @@ body {
 .typed-cursor {
   color: #ffc107;
   font-weight: bold;
+}
+
+#about, #skills, #certificates{
+  background-color: #121212;
+}
+
+.about-container {
+  position: relative;
+}
+
+#wave {
+  position: absolute;
+  bottom: -1px;
+  width: 100%; 
 }
 
 
@@ -53,7 +79,7 @@ a:hover {
   margin: 0 auto 1.5rem;
 }
 .hero {
-  min-height: 92vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,7 +97,19 @@ a:hover {
 .hero img {
   width: 400px;
 }
+
+@media screen and (max-width: 480px) {
+  .hero img {
+    width: 200px;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+}
+
 .card{
+  cursor: pointer;
   transition: transform 0.6s ease;
 }
 .card:hover {
@@ -79,9 +117,6 @@ a:hover {
 }
 
 #title {
-  color: white;
-  font-weight: 300;
-  font-size: 50px;
   letter-spacing: 5px;
 }
 
@@ -102,13 +137,20 @@ footer a {
 .icon-box i {
   font-size: 3rem;
   color: #ffc107;
+  cursor: pointer;
+  transition: transform 0.6s ease;
 }
+
+.icon-box i:hover{
+  transform: scale(1.25);
+}
+
 .icon-box h5 {
   margin-top: 10px;
   font-size: 1.2rem;
 }
 
-/* ======================= project section================================= */
+/* ============================================================================== project section ======================================================== */
 #projects p{
   color: #cecece;
 }
@@ -116,21 +158,23 @@ footer a {
   background: #0000005e;
 }
 
-.project-card p {
-  color: rgb(151, 0, 0);
-}
-
 .project-card-heading {
   color: #ffffff;
   font-weight: bolder;
 }
 
-/* ========================= certificates section =============================== */
+.badge-color{
+  color: #9500ff;
+  background-color: #9500ff12;
+  font-weight: 500;
+}
+
+/* ============================================================================ certificates section =============================================================== */
 #certificates p{
   color: #cccccc;
 }
 
-/* ========================= skills section =============================== */
+/* ================================================================================ skills section ================================================================= */
 #skills p{
   color: #cccccc;
 }
