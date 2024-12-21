@@ -106,6 +106,9 @@ a:hover {
     font-size: 2.5rem;
     font-weight: bold;
   }
+  .typed-text{
+    min-height: 60px;
+  }
 }
 
 .card{
@@ -134,14 +137,14 @@ footer a {
   text-align: center;
   margin-top: 20px;
 }
-.icon-box i {
+.icon-box i, .icon-box img {
   font-size: 3rem;
   color: #ffc107;
   cursor: pointer;
   transition: transform 0.6s ease;
 }
 
-.icon-box i:hover{
+.icon-box i:hover, .icon-box img:hover{
   transform: scale(1.25);
 }
 
